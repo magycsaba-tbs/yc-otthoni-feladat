@@ -18,13 +18,13 @@ class FaxPDFConvert
     public function process(): array
     {
         $peopleData = new PeopleData($this->pathPeopleJSON);
-        $peopleDataConverted = $peopleData->convert();
+        $peopleData->arrange();
 
         $faxFiles = new FaxData($this->pathFaxDirectory);
-        new FaxDataUidFiles($peopleDataConverted, $faxFiles);
+        new FaxDataUidFiles($peopleData->customers, $faxFiles);
 
         $pdfFileNames = [];
-        foreach ($peopleDataConverted as $customer) {
+        foreach ($peopleData->customers as $customer) {
             $pdfFileNames[] = $customer->getPDF($this->PDFDirectory);
         }
         return $pdfFileNames;
