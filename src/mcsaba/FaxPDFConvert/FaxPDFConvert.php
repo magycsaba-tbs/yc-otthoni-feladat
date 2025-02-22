@@ -1,8 +1,8 @@
 <?php
 
-namespace mcsaba\FaxTools;
+namespace mcsaba\FaxPDFConvert;
 
-class PDFMaker
+class FaxPDFConvert
 {
     private string $pathPeopleJSON;
     private string $pathFaxDirectory;

@@ -1,6 +1,6 @@
 <?php
 
-namespace mcsaba\FaxTools;
+namespace mcsaba\FaxPDFConvert;
 
 class PeopleData
 {
