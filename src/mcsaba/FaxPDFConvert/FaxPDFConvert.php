@@ -21,7 +21,7 @@ class FaxPDFConvert
         $peopleData->arrange();
 
         $faxFiles = new FaxData($this->pathFaxDirectory);
-        new FaxDataUidFiles($peopleData->customers, $faxFiles);
+        (new FaxDataUidFiles($peopleData->customers, $faxFiles))->generate();
 
         $pdfFileNames = [];
         foreach ($peopleData->customers as $customer) {
